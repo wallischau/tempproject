@@ -1,0 +1,8 @@
+[
+  "auth",
+  "rest",
+  "errors",
+  "decorators",
+  "res-socket",
+  "websocket-conn"
+]

@@ -1,0 +1,186 @@
+{
+  "runner": "ixveriwave",
+  "test_file": "/mnt/wifi_vol/SMART/test_suites/ixia/7.3.X/Wave2_PRD2_TCL/Triple_Play/TP.tcl",
+  "test_cases": {
+    "TriplePlay_24_20_M7": {
+      "enabled": {
+        "retail": true,
+        "spectrum": true,
+        "res_com": true,
+        "currently": false
+      },
+      "flow_name": "Flow Group A",
+      "flow_settings": {
+        "ant_tx_24": {
+          "value": 1,
+          "comparator": "=="
+        }
+      }
+    },
+    "TriplePlay_24_20_M15": {
+      "enabled": {
+        "retail": true,
+        "spectrum": true,
+        "res_com": true,
+        "currently": false
+      },
+      "flow_name": "Flow Group A",
+      "flow_settings": {
+        "ant_tx_24": {
+          "value": 2,
+          "comparator": "=="
+        }
+      }
+    },
+    "TriplePlay_24_20_M23": {
+      "enabled": {
+        "retail": true,
+        "spectrum": true,
+        "res_com": true,
+        "currently": false
+      },
+      "flow_name": "Flow Group A",
+      "flow_settings": {
+        "ant_tx_24": {
+          "value": 3,
+          "comparator": "=="
+        }
+      }
+    },
+    "TriplePlay_24_20_M31": {
+      "enabled": {
+        "retail": true,
+        "spectrum": true,
+        "res_com": true,
+        "currently": false
+      },
+      "flow_name": "Flow Group A",
+      "flow_settings": {
+        "ant_tx_24": {
+          "value": 4,
+          "comparator": "=="
+        }
+      }
+    },
+    "TriplePlay_5_40_M7": {
+      "enabled": {
+        "retail": true,
+        "spectrum": true,
+        "res_com": true,
+        "currently": false
+      },
+      "flow_name": "Flow Group B",
+      "flow_settings": {
+        "ant_tx_24": {
+          "value": 1,
+          "comparator": "=="
+        }
+      }
+    },
+    "TriplePlay_5_40_M15": {
+      "enabled": {
+        "retail": true,
+        "spectrum": true,
+        "res_com": true,
+        "currently": false
+      },
+      "flow_name": "Flow Group B",
+      "flow_settings": {
+        "ant_tx_24": {
+          "value": 2,
+          "comparator": "=="
+        }
+      }
+    },
+    "TriplePlay_5_40_M23": {
+      "enabled": {
+        "retail": true,
+        "spectrum": true,
+        "res_com": true,
+        "currently": false
+      },
+      "flow_name": "Flow Group B",
+      "flow_settings": {
+        "ant_tx_24": {
+          "value": 3,
+          "comparator": "=="
+        }
+      }
+    },
+    "TriplePlay_5_40_M31": {
+      "enabled": {
+        "retail": true,
+        "spectrum": true,
+        "res_com": true,
+        "currently": false
+      },
+      "flow_name": "Flow Group B",
+      "flow_settings": {
+        "ant_tx_24": {
+          "value": 4,
+          "comparator": "=="
+        }
+      }
+    },
+    "TriplePlay_5_80_S1_M9": {
+      "enabled": {
+        "retail": true,
+        "spectrum": true,
+        "res_com": true,
+        "currently": false
+      },
+      "flow_name": "Flow Group C",
+      "flow_settings": {
+        "ss_5": {
+          "value": 1,
+          "comparator": "=="
+        }
+      }
+    },
+    "TriplePlay_5_80_S2_M9": {
+      "enabled": {
+        "retail": true,
+        "spectrum": true,
+        "res_com": true,
+        "currently": false
+      },
+      "flow_name": "Flow Group C",
+      "flow_settings": {
+        "ss_5": {
+          "value": 2,
+          "comparator": "=="
+        }
+      }
+    },
+    "TriplePlay_5_80_S3_M9": {
+      "enabled": {
+        "retail": true,
+        "spectrum": true,
+        "res_com": true,
+        "currently": false
+      },
+      "flow_name": "Flow Group C",
+      "flow_settings": {
+        "ss_5": {
+          "value": 3,
+          "comparator": "=="
+        }
+      }
+    },
+    "TriplePlay_5_80_S4_M9": {
+      "enabled": {
+        "retail": true,
+        "spectrum": true,
+        "res_com": true,
+        "currently": false
+      },
+      "flow_name": "Flow Group C",
+      "flow_settings": {
+        "ss_5": {
+          "value": 4,
+          "comparator": "=="
+        }
+      }
+    }
+  }
+}

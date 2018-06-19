@@ -1,0 +1,27 @@
+{
+  
+  "reload": true,
+  
+  "http": {
+    "port": 80,
+    "ssl": { 
+      "port": 443,
+      "force": true,
+      "certificate": "c:/charter/lsr01wasccc.wirelesstech.charterlab.com.pem",
+      "private_key": "c:/charter/lsr01wasccc.wirelesstech.charterlab.com.key"
+    },
+    "session": {
+      "expires": "1h"
+    }
+  },
+  
+  "mongo": {
+    "host": "127.0.0.1",
+    "port": 27017,
+    "database": "smart",
+    "username": "mongodb",
+    "password": "nothing"
+  },
+
+  "pythonExe": "/usr/local/bin/python3.5"
+}

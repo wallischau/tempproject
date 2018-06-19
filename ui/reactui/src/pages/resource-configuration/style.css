@@ -1,0 +1,45 @@
+
+.configuration-line>td {
+  padding: 20px 0;
+}
+
+.configuration-line {
+  border: solid grey 1px;
+}
+
+.configuration-line:hover>td {
+  background-color: lightblue;
+}
+
+.selected {
+  background-color: lightgrey;
+}
+
+input {
+  font-size: 1em !important;
+  /* padding: 0 !important; */
+}
+
+.configuration-table {
+  border: solid black 1px;
+  border-collapse: collapse;
+  width: 100%;
+  text-align: center;
+}
+
+.configuration-table th {
+  text-align: left
+}
+
+.resourceBtn {
+  background-color: #fff;
+  padding: 6px 12px;
+  font-size: 14px;
+  margin: 10px;
+  white-space: nowrap;
+  vertical-align: middle;
+  cursor: pointer;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-family: inherit;
+}

@@ -1,0 +1,215 @@
+{
+    "devices":{
+        "1": {
+            "type": "trafficGenWIDE",
+            "main_label": "",
+            "endpoints": {}, 
+            "children_ids":["2", "3", "4"]
+        },
+        "2": {
+            "type": "card",
+            "main_label": "5",
+            "secondary_label": "",
+            "parent_id": "1",
+            "endpoints": {
+                "outputs": [
+                    "tgen_card1_A",
+                    "tgen_card1_B",
+                    "tgen_card1_C",
+                    "tgen_card1_D"
+                ]
+            }
+        },
+        "3": {
+            "type": "card",
+            "id": "tgen_card2",
+            "main_label": "24",
+            "secondary_label": "",
+            "parent_id": "1",            
+            "endpoints": {
+                "outputs": [
+                    "tgen_card2_A",
+                    "tgen_card2_B",
+                    "tgen_card2_C",
+                    "tgen_card2_D"
+                ]
+            }
+        }, 
+        "4": {
+            "type": "card",
+            "id": "tgen_card3",
+            "main_label": "eth",
+            "secondary_label": "", 
+            "parent_id": "1",            
+            "endpoints": {
+                "inputs": [
+                    "tgen_card3_eth1"
+                ]
+            }
+        },
+        "5": {
+            "type": "atten", 
+            "id": "atten1",
+            "main_label": "",
+            "endpoints": {
+                "inputs": [
+                    "atten1_out_10", 
+                    "atten1_out_20", 
+                    "atten1_out_30", 
+                    "atten1_out_40", 
+                    "atten1_out_50", 
+                    "atten1_out_60", 
+                    "atten1_out_70", 
+                    "atten1_out_80" 
+                ], 
+                "outputs": [
+                    "atten1_in_10", 
+                    "atten1_in_20", 
+                    "atten1_in_30", 
+                    "atten1_in_40", 
+                    "atten1_in_50", 
+                    "atten1_in_60", 
+                    "atten1_in_70", 
+                    "atten1_in_80"
+                ]
+            }
+        },
+        "6": {
+            "type": "chamber-dut", 
+            "id": "chamber1",
+            "main_label": "",
+            "endpoints": {
+                "inputs": [
+                    "chamber1_in_{}", 
+                    "chamber1_in_{}", 
+                    "chamber1_in_{}", 
+                    "chamber1_in_{}",
+                    "chamber1_in_{}", 
+                    "chamber1_in_{}", 
+                    "chamber1_in_{}", 
+                    "chamber1_in_{}"
+                ], 
+                "outputs": [
+                    "chamber1_eth_1", 
+                    "chamber1_eth_2"
+                ]
+            }, 
+            "children_ids" : [ "8" ]
+        }, 
+        "7": {
+            "type": "switch", 
+            "id": "vlan",
+            "main_label": "Switch {}",
+            "endpoints": {
+                "outputs": [
+                ], 
+                "inputs": [
+                    "switch_in_A"
+                ]
+            }
+        },
+        "8": {
+            "type": "dut",
+            "id": "chamber1_dut",
+            "parent_id": "6",
+            "main_label": "",
+            "endpoints": {
+                "outputs": [], 
+                "inputs": []
+            }
+        }
+    },
+    "connections": [
+        {
+            "source": "tgen_card1_A", 
+            "target": "atten1_in_10", 
+            "type": "sma"            
+        },
+        {
+            "source": "tgen_card1_B", 
+            "target": "atten1_in_20", 
+            "type": "sma"            
+        },
+        {
+            "source": "tgen_card1_C", 
+            "target": "atten1_in_30", 
+            "type": "sma"            
+        },
+        {
+            "source": "tgen_card1_D", 
+            "target": "atten1_in_40", 
+            "type": "sma"            
+        },
+        
+        {
+            "source": "tgen_card2_A", 
+            "target": "atten1_in_50", 
+            "type": "sma"            
+        },
+        {
+            "source": "tgen_card2_B", 
+            "target": "atten1_in_60", 
+            "type": "sma"            
+        },
+        {
+            "source": "tgen_card2_C", 
+            "target": "atten1_in_70", 
+            "type": "sma"            
+        },
+        {
+            "source": "tgen_card2_D", 
+            "target": "atten1_in_80", 
+            "type": "sma"            
+        },
+        {
+            "source": "atten1_out_10", 
+            "target": "chamber1_in_{}", 
+            "type": "sma"
+        },
+        {
+            "source": "atten1_out_20", 
+            "target": "chamber1_in_{}", 
+            "type": "sma"
+        },
+        {
+            "source": "atten1_out_30", 
+            "target": "chamber1_in_{}", 
+            "type": "sma"
+        },
+        {
+            "source": "atten1_out_40", 
+            "target": "chamber1_in_{}", 
+            "type": "sma"
+        },
+        {
+            "source": "atten1_out_50", 
+            "target": "chamber1_in_{}", 
+            "type": "sma"
+        },
+        {
+            "source": "atten1_out_60", 
+            "target": "chamber1_in_{}", 
+            "type": "sma"
+        },
+        {
+            "source": "atten1_out_70", 
+            "target": "chamber1_in_{}", 
+            "type": "sma"
+        },
+        {
+            "source": "atten1_out_80", 
+            "target": "chamber1_in_{}", 
+            "type": "sma"
+        },
+        {
+            "source": "chamber1_eth_1", 
+            "target": "tgen_card3_eth1", 
+            "type": "data"
+        },
+        {
+            "source": "chamber1_eth_2", 
+            "target": "switch_in_A", 
+            "type": "data"
+        }
+    ]
+}

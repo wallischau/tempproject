@@ -1,0 +1,59 @@
+[
+  {
+    "type": "ethernet",
+    "chassis_ip": "",
+    "card_serial": "",
+    "slot": "",
+    "port": "asdasdasdasd",
+    "reserved_by_chamber": "",
+    "edit": null
+  },
+  {
+    "type": "ethernet",
+    "chassis_ip": "",
+    "card_serial": "",
+    "slot": "",
+    "port": "",
+    "reserved_by_chamber": ""
+  },
+  {
+    "type": "ethernet",
+    "chassis_ip": "gfkfksjkeg",
+    "card_serial": "kgjwi-2156",
+    "slot": "3",
+    "port": "12",
+    "reserved_by_chamber": ""
+  },
+  {
+    "type": "ethernet",
+    "chassis_ip": "1",
+    "card_serial": "2",
+    "slot": "3",
+    "port": "4",
+    "reserved_by_chamber": ""
+  },
+  {
+    "type": "ethernet",
+    "chassis_ip": "5",
+    "card_serial": "6",
+    "slot": "7",
+    "port": "8",
+    "reserved_by_chamber": ""
+  },
+  {
+    "type": "ethernet",
+    "chassis_ip": "9",
+    "card_serial": "10",
+    "slot": "11",
+    "port": "12",
+    "reserved_by_chamber": ""
+  },
+  {
+    "type": "ethernet",
+    "chassis_ip": "13",
+    "card_serial": "14",
+    "slot": "15",
+    "port": "16",
+    "reserved_by_chamber": ""
+  }
+]

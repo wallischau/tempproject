@@ -1,0 +1,16 @@
+.reports {
+  width: 900px;
+  margin: 75px auto;
+}
+
+.report-selector {
+  border: 1px solid #005985;
+  background-color: #f5f5f5;
+  border-radius: 6px;
+  padding: 24px;
+}
+
+.report-selector select {
+  width: 100%;
+  padding: 10px;
+}

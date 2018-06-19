@@ -1,0 +1,20 @@
+{
+  
+  "reload": true,
+  
+  "http": {
+    "port": 8080,
+    "session": {
+      "expires": "30d"
+    }
+  },
+  
+  "mongo": {
+    "host": "127.0.0.1",
+    "port": 27017,
+    "database": "unittest",
+    "username": "mongodb",
+    "password": "nothing"
+  }
+  
+}

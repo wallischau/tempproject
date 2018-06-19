@@ -1,0 +1,76 @@
+{
+    "atten": {
+        "cssClass": "wdg-atten wdg-g-center",
+        "positioning": {
+            "inputs": ["x", 0, 0, -1], 
+            "outputs": ["x", 1, 0, 1]
+        }
+    }, 
+    "switch": {
+        "cssClass": "wdg-switch wdg-g-center",
+        "positioning": {
+            "inputs": ["x", 1], 
+            "outputs": ["x", 0]
+        }
+    }, 
+    "trafficGen": {
+        "cssClass": "wdg-gen wdg-parent"
+    }, 
+    "trafficGenWIDE": {
+        "cssClass": "wdg-gen wdg-wide wdg-parent"
+    }, 
+    "chamber": {
+        "cssClass": "wdg-chamber wdg-g-center", 
+        "positioning": {
+            "inputs": ["x", 1, 0, 0], 
+            "outputs": [1, "x",  1, 0]
+        }
+    }, 
+    "chamber-dut": {
+        "cssClass": "wdg-chamber wdg-parent wdg-g-center", 
+        "positioning": {
+            "inputs": ["x", 1], 
+            "outputs": [1, "x"]
+        }
+    }, 
+    "dut": {
+        "cssClass": "wdg-dut wdg-g-center",
+        "positioning": {
+            "inputs": ["x", 1],
+            "outputs": [1, "x"]
+        },
+        "label_pos": {
+            "outputs": [-1.6, 0.6]
+        }
+    },
+    "card": {
+        "cssClass": "wdg-card wdg-g-center", 
+        "positioning": {
+            "inputs": ["x", 0, 0, 1],
+            "outputs": ["x", 0, 0, 1]
+        }
+    }, 
+    "data": {
+        "cssClass": "wdg-data",
+        "connector": "Straight"
+    },
+    "sma": {
+        "cssClass": "wdg-sma", 
+        "connector": ["StateMachine"]
+    },
+    "control": {
+        "connector": "Straight"
+    },
+    "inputs": {
+        "endpoint": ["Rectangle", { "width": 14, "height": 14}], 
+        "cssClass": "input-endpoint", 
+        "isTarget": true, 
+        "width": 5,
+        "height": 5
+    }, 
+    "outputs": {
+        "endpoint": ["Dot", { "radius": 7 } ],
+        "cssClass": "output-endpoint", 
+        "isSource": true
+    }
+}

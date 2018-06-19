@@ -1,0 +1,111 @@
+
+/// From old code, HOW TO EXPORT CSV and Excel
+/// this is itterating thru the rendered table element, why not skip that and use the JSON?
+
+.controller('ExportTableController', function($scope) {
+
+    $scope.exportToCsv = function($tableId, $filename) {
+
+        var data = "";
+        var table = document.getElementById($tableId);
+
+        for(var idxRow=0; idxRow < table.rows.length; idxRow++){
+            var row = table.rows[idxRow];
+
+            for(var idxCol=0; idxCol < row.cells.length; idxCol++){
+                var cell = row.cells[idxCol];
+                var colSpan = cell.colSpan; 
+
+                var value = String(cell.innerHTML).replace(/,/g, "");
+                data += value.trim();               
+
+                if(idxCol < row.cells.length){
+                    for(idxColSpan=0; idxColSpan < colSpan; idxColSpan++) {
+                        data += ",";
+                    }
+                }
+            }
+
+            data += "\n"
+        }
+
+        csv = new Blob([data], {type: 'text/csv;charset=utf-8;'});
+
+        var uri = "data:text/plain," + data;
+        var downloadLink = document.createElement("a");
+        
+        downloadLink.href = window.URL.createObjectURL(csv);
+        downloadLink.setAttribute('download', $filename);
+       
+        document.body.appendChild(downloadLink);
+        downloadLink.click()
+
+        document.body.removeChild(downloadLink);
+    };
+
+    $scope.exportToExcel = function($tableId, $filename) {
+        
+        data = "<table border='1'>";
+        var table = document.getElementById($tableId);
+
+        for(var idxRow=0; idxRow < table.rows.length; idxRow++) {
+            var row = table.rows[idxRow];
+            data += "<tr>" 
+
+            for(var idxCol=0; idxCol < row.cells.length; idxCol++) {
+                var align = "right";
+                var cell = row.cells[idxCol];
+                var cellClass = cell.className;
+                var colSpan = cell.colSpan;
+
+                if(idxRow <= 1) {
+                    align = "center";
+                }
+
+                if(idxRow%2 == 0) {
+                    bgColor = "white";
+                }
+                else{
+                    bgColor = "lightgrey";
+                }
+
+                if(cellClass.indexOf("success") != -1) {
+                    bgColor = "palegreen";
+                }
+                else if(cellClass.indexOf("danger") != -1) {
+                    bgColor = "pink";
+                }
+                
+                data += "<td colSpan='" + colSpan + "' align='" + align + "'bgcolor='" + bgColor + "'>";
+
+                if(idxRow <= 1) {
+                    data += "<strong>";
+                }
+
+                data += cell.innerHTML;
+
+                if(idxRow <= 1) {
+                    data += "</strong>";
+                }
+
+                data += "</td>";
+            }
+            data += "</tr>";
+        }
+        
+        data += "</table>";
+
+        xls = new Blob([data], {type: 'text/plain;'});
+
+        var uri = "data:application/vnd.ms-excel," + encodeURIComponent(data);
+        var downloadLink = document.createElement("a");
+        
+        downloadLink.href = window.URL.createObjectURL(xls);
+        downloadLink.setAttribute('download', $filename);
+
+        document.body.appendChild(downloadLink);
+        downloadLink.click();
+
+    };
+
+})

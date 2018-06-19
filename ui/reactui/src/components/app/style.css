@@ -1,0 +1,91 @@
+.layout-navbar {
+  padding: 16px;
+  background: #00032C;
+  border-bottom: 3px solid #0066cc;
+  height: 75px;
+  box-sizing: border-box;
+}
+
+.layout-navbar img {
+  float: left;
+  width: auto;
+  height: 40px;
+}
+
+.layout-navbar-links {
+  float: right;
+  line-height: 40px;
+  vertical-align: middle;
+  font-size: 12pt;
+}
+
+/* <Link> element turns into <a> */
+.layout-navbar-links > a {
+  padding: 16px;
+  color: #0066cc;
+  text-decoration: none;
+  transition: color 0.2s ease-in-out;
+}
+
+.layout-navbar-links > a:hover {
+  color: #ddf;
+}
+
+.layout-navbar-links > a.selected {
+  color: #fff;
+}
+
+
+/* USER PROFILE STYLE */
+.user-profile {
+  border: solid black 1px;
+ 
+  display: grid;
+  grid-template-columns: 200px minmax(300px, max-content);;
+  grid-template-rows: 100px;
+  grid-auto-rows: 50px;
+
+  margin: 0 auto;
+  width: fit-content; 
+  padding: 30px;
+}
+
+.user-info-line {
+  padding: 10px;
+  grid-column: 1;
+}
+
+.user-profile span {
+  font-size: 2em;
+  grid-column: 2;
+}
+
+
+.user-profile button {
+  grid-column: span 2;
+  margin-bottom: 20px;
+  font-size: 2em;
+  background: #0066cc;
+  border: none;
+}
+
+.user-profile button:hover {
+  background: #64f0f5;
+}
+
+
+/* error message */
+.error-message, .success-message {
+  border: 1px solid black;
+  text-align: center;
+  padding: 5px;
+  font-size: 1.2em;
+  background: rgb(252, 64, 50);
+
+  width: 100%;
+}
+
+/* success message */
+.success-message {
+  background: rgb(40, 220, 0);
+}

@@ -1,0 +1,28 @@
+{
+  
+  "reload": false,
+  
+  "http": {
+    "port": 80,
+    "ssl": {
+      "port": 443,
+      "force": true,
+      "certificate": "/etc/pki/tls/certs/lsr01wasccc.wirelesstech.charterlab.com.pem",
+      "private_key": "/etc/pki/tls/private/lsr01wasccc.wirelesstech.charterlab.com.key"
+    },
+    "session": {
+      "expires": "1h"
+    }
+  },
+  
+  "mongo": {
+    "host": "96.37.189.12",
+    "port": 27017,
+    "database": "smart",
+    "username": "root",
+    "password": "kickstart"
+  },
+
+  "pythonExe": "/usr/bin/python3.6"
+  
+}

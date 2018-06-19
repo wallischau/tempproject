@@ -1,0 +1,131 @@
+/* body {
+    height: 100%;
+    width: 100%;
+    font-family: Verdana,Arial,sans-serif;
+    font-weight: bold;
+    font-size: 16px;
+} */
+
+.border {
+    border-radius: 10px; 
+}
+
+#wrap {
+    margin: 0;
+    max-width: 800px;
+
+    display: grid;
+    grid-auto-rows: minmax(75px, max-content);
+    grid-auto-columns: 200px;
+    grid-gap: 100px 50px;
+}
+
+.wdg-g-center {
+    display: grid;
+    align-items: center;
+    justify-content: center;
+}
+
+.wdg-parent {
+    display: grid;
+    grid-auto-columns: 1fr;  
+    grid-gap: 10px;
+    padding:0 5px;
+}
+
+/* device specific styles */
+.wdg-gen {
+    grid-row: 3;
+    grid-column: span 2;    
+    background-color: rgb(184, 205, 248);
+}
+
+.wdg-wide {
+    grid-column: span 3;
+}
+
+.wdg-atten, .wdg-switch, .wdg-chamber {
+    background-color: rgb(184, 205, 248);
+}
+
+.wdg-atten {
+    grid-row: 2;
+    grid-column: span 2;
+}
+
+.wdg-switch {
+    grid-row: 1;
+    max-height: max-content;
+    align-self: center;
+}
+
+.wdg-chamber {
+    grid-row: 1;
+    grid-column: span 2;
+    
+    display: grid;
+    grid-template-rows: 50px 1fr 40px ;
+}
+
+.wdg-card {
+    grid-row: 1;
+    background-color: rgb(157, 141, 241);
+    min-height: 100px;
+}
+
+.wdg-dut {
+    grid-row: 2;
+    background-color: rgb(157, 141, 241);
+    min-height: 100px;
+    margin-right: 50px;
+}
+
+/* device label styles */
+.main-label {
+    background-color: rgba(28, 254, 179, 0.253);
+    padding: 5px;    
+    margin: 10px;
+    z-index: 3;
+    text-align: center;
+}
+
+.secondary-label {
+    background-color: rgba(28, 254, 179, 0.253);
+    padding: 5px;    
+    margin: 10px;  
+    z-index: 5;
+    text-align: center;    
+}
+
+.wdg-chamber .main-label {
+    grid-row: 1;
+}
+
+.wdg-dut .main-label {
+    grid-row: initial;
+}
+
+/* jsplumb styles for connections and endpoints */
+.jtk-connector { z-index: 1; }
+.jtk-endpoint { display: none; } /* hide default endpoint */
+
+.jtk-overlay { 
+    z-index: 4; 
+    border-radius: 5px;
+    background-color: rgb(173, 162, 147);
+    pointer-events: none;
+    padding: 3px;
+}
+
+svg path {
+    stroke-width: 4;
+}
+
+svg.wdg-data path {
+    stroke: rgb(34, 170, 216);
+}
+
+svg.wdg-sma path {
+    stroke: rgb(255, 127, 39);
+}
+

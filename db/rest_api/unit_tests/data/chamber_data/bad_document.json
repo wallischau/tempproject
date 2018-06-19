@@ -1,0 +1,33 @@
+{
+    "type": {},
+    "name": "A",
+    "make": "Some make",
+    "model": "Some model",
+    "location": "2.3",
+    "reserved_by": "",
+    "attenuator": {
+        "manufacturer": "Some manufacturer",
+        "ip": "12.34.56.78",
+        "5_ports": "5-8",
+        "24_ports": "1-4"
+    },
+    "ixia_card_config": {
+        "5": {
+            "chassis_ip": "98.76.54.32",
+            "card_serial": "53R14L",
+            "slot": "some slot",
+            "port": "some port"
+        },
+        "24": {
+            "chassis_ip": "01.23.45.67",
+            "card_serial": "L41R35",
+            "slot": "some other slot",
+            "port": "some other port"
+        }
+    },
+    "dut": {
+        "make": "Some other make",
+        "model": "Some other model",
+        "mac": "987654"
+    }
+}

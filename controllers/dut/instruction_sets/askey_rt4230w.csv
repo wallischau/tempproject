@@ -1,0 +1,30 @@
+CLEAR_DNS,uci set network.wan.peerdns='1';uci set network.wan.dns=''
+COMMIT_CONFIG,uci commit
+CONFIG_FIREWALL,uci set firewall.@zone[0].network=@WAN;uci commit firewall;/etc/init.d/firewall restart
+GET_MAKE,Askey
+GET_MODEL,RT4230
+GET_OS,echo OpenWRT
+GET_ROUTER_INFO,mf_tool show
+GET_SYSLOG,cat /tmp/syslog/messages
+REBOOT,reboot
+RELOAD_FIREWALL,/etc/init.d/firewall reload
+SET_BANDWIDTH_RANGE,
+SET_CHANNEL,uci set wireless.wifi0.channel=@CHANNEL
+SET_DHCP_DURATION,uci set dhcp.wan.leasetime=@DHCP_LEASE_TIMEd
+SET_DHCP_OFF,/etc/init.d/dnsmasq disable;/etc/init.d/dnsmasq stop;uci set network.wan.proto=static;uci commit;/etc/init.d/network restart
+SET_DHCP_ON,uci set network.wan.proto=dhcp;uci commit network;/etc/init.d/network restart
+SET_DHCP_RANGE,uci set dhcp.wan.start=@DHCP_START;uci set dhcp.wan.limit=@DHCP_LIMIT
+SET_DMZ,
+SET_DNS,uci set network.wan.peerdns='0';uci set network.wan.dns='@DNS1 @DNS2';
+SET_ENCRYPTION_TYPE_OFF,uci set wireless.@wifi-iface[0].encryption=none
+SET_ENCRYPTION_TYPE_WPA2,uci set wireless.@wifi-iface[0].encryption=psk2
+SET_GATEWAY,uci set network.wan.gateway=@GATEWAY
+SET_IPV4,uci set network.wan.ipaddr=@IP_ADDR
+SET_IPV6,
+SET_LED_OFF,mf_tool LED_OFF
+SET_LED_ON,mf_tool LED_ON
+SET_NETMASK,uci set network.wan.netmask=
+SET_PASSPHRASE,uci set wireless.@wifi-iface[0].key=
+SET_SSID,uci set wireless.@wifi-iface[0].ssid=
+SET_WAN,
+SHOW_DNS,cat /etc/resolv.conf

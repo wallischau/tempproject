@@ -1,0 +1,32 @@
+{
+  "chambers":
+  [ 
+    { 
+      "label": "1.1",
+      "chassis": "10.3.65.100",
+      "5GHz_card": "6",
+      "5GHz_port": "1",
+      "2GHz_card": "",
+      "2GHz_port": "",
+      "routers":
+      [
+        {
+          "ssid": "",
+          "make": "",
+          "model": "",
+          "ip": ""
+        }
+      ]
+    }
+  ],
+  "ixia_equipment":
+  [
+    {
+      "type": "ata",
+      "host": "10.3.65.109"
+    }
+  ],
+  "octo_equipment": 
+  [
+  ]
+}

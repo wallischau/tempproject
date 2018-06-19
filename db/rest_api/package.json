@@ -1,0 +1,28 @@
+{
+  "name": "smart-server",
+  "version": "1.0.0",
+  "description": "backend for smart reactui",
+  "main": "start.js",
+  "scripts": {
+    "start": "node start",
+    "migrate": "node start --migrate",
+    "test": "node start --test",
+    "prod": "node start --prod"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://P2712995@git.corp.chartercom.com:8443/scm/wtac/smart.git"
+  },
+  "author": "Charter Communications",
+  "license": "ISC",
+  "dependencies": {
+    "colors": "^1.1.2",
+    "connect-mongo": "^2.0.1",
+    "express": "^4.16.2",
+    "express-session": "^1.15.6",
+    "mongoose": "^5.0.1",
+    "nodemon": "^1.14.6",
+    "pg": "^7.4.1",
+    "socket.io": "^2.0.4"
+  }
+}

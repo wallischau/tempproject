@@ -1,0 +1,8 @@
+{
+  "type": "ethernet",
+  "chassis_ip": "1234566789",
+  "card_serial": "kgjwi-2156",
+  "slot": "1",
+  "port": "10",
+  "reserved_by_chamber": "A"
+}
