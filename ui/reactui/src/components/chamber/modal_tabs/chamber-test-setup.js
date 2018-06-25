@@ -6,7 +6,7 @@ import TestSuitePlaylist from './playlist-tab'
 import Terminal from '../../terminal'
 
 import { cancelTests } from '../../../services/chambers/actions'
-import { setTestSetupError } from '../../../services/chambers/actions'
+import { setTestSetupError } from '../../../services/snackbars/actions'
 import { populateTestItems } from '../../../services/testqueue/actions'
 
 

@@ -3,9 +3,10 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import  { reserveChamber
         , unReserveChamber
-        , setTestSetupError
+        
         , setTestSetupSuccess 
         } from '../../../services/chambers/actions'
+import { setTestSetupError} from '../../../services/snackbars/actions'
 
 class ReserveChamber extends Component {
   constructor(props) {

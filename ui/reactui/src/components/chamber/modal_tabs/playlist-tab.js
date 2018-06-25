@@ -4,7 +4,7 @@ import { connect } from 'react-redux'
 import PlaylistTable from '../../playlist/playlist-table'
 import { fetchTestSuites, scanForSSIDs } from '../../../services/playlist/actions'
 import { populateTestItems } from '../../../services/testqueue/actions'
-import { setTestSetupError } from '../../../services/chambers/actions'
+import { setTestSetupError } from '../../../services/snackbars/actions'
 import './playlist-style.css'
 
 class TestSuitePlaylist extends Component {

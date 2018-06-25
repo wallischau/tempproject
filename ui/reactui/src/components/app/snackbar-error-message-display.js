@@ -1,10 +1,13 @@
 import React from 'react';
+import { bindActionCreators } from 'redux'
+import { connect } from 'react-redux'
 import PropTypes from 'prop-types';
 import {withStyles} from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 import Snackbar from '@material-ui/core/Snackbar';
 import IconButton from '@material-ui/core/IconButton';
 import CloseIcon from '@material-ui/icons/Close';
+import { resetErrMessage } from '../../services/snackbars/actions'
 
 const styles = theme => ({
   close: {
@@ -14,40 +17,39 @@ const styles = theme => ({
 });
 
 
-class SimpleSnackbar extends React.Component {
-	state = {
-		open: true,
-	};
+class SnackbarMessage extends React.Component {
+	// state = {
+	// 	open: true,
+	// };
 
-	//this.setState({open:true})
 
 	handleClose = (event, reason) => {
 		if (reason === 'clickaway') {
 			return;
 		}
-		this.setState({open:false});
+		// this.setState({open:false});
+		console.log('props before resetErr: ', this.props);
+		this.props.resetErrMessage(this.props.chamberName);
 	};
 
 	render() {
 		console.log('snack');
-		const { classes } = this.props;
+		console.log('snackbar props: ', this.props);
+		const { classes, open } = this.props;
 		return (
-			<div className = {this.props.errorClass}>
+			<div>
 				<Snackbar
 					anchorOrigin = {{
 						vertical: 'top',
 						horizontal: 'center',
 					}}
-					open={this.state.open}
-					{/*autoHideDuration={6000} */}
-					onClose={this.handleclose}
+					open={open}
+					onClose={this.handleClose}
 					ContentProps={{
 						'aria-describedby': 'message-id',
 					}}
-					message={<span id='message-id'>{this.props.errorMessage}</span>}
+					message={<span className="snackbar-msg" id='message-id'>{this.props.errorMessage}</span>}
 					action={[
-						<Button key="detail" color="secondary" size="small" onClick={this.handleClose}>Detail
-						</Button>,
 						<IconButton key="Close"
 							aria-label="Close"
 							color="inherit"
@@ -62,8 +64,21 @@ class SimpleSnackbar extends React.Component {
 	}//render
 }
 
-SimpleSnackbar.propTypes = {
+SnackbarMessage.propTypes = {
 	classes: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles)(SimpleSnackbar);
+const mapStateToProps = (state, currentProps) => ({
+	open: state.snackbars.open,
+  	chamberName: state.snackbars.snackbarChamberName,
+})
+
+const mapDispatchToProps = dispatch => bindActionCreators({
+	resetErrMessage
+}, dispatch)
+
+// export default withStyles(styles)(SnackbarMessage);
+export default withStyles(styles)(connect(
+	mapStateToProps,
+	mapDispatchToProps
+)(SnackbarMessage))

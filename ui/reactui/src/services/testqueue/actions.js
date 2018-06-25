@@ -1,5 +1,6 @@
 import { normalizeResponse } from '../error-handling/actions'
-import { setTestSetupError, setTestSetupSuccess } from '../chambers/actions'
+import { setTestSetupSuccess } from '../chambers/actions'
+import { setTestSetupError} from '../snackbars/actions'
 
 export const actions = {
   TESTQUEUE_ADD: 'testqueue/TESTQUEUE_ADD',

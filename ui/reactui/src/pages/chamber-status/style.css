@@ -92,6 +92,10 @@
   margin-bottom: 15px;
 }
 
+.snackbar-msg {
+  color: rgb(252, 64, 50);
+}
+
 .test-setup-success {
   background: rgb(40, 220, 0);
 }

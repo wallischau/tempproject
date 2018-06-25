@@ -11,7 +11,7 @@ import './style.css';
 
 
 const mapStateToProps = (state) => ({
-  errorMessage: state.errorMessage
+  errorMessage: state.errorMessage,
 })
 
 class App extends Component {

@@ -5,12 +5,13 @@ import {
   saveAttenuatorConfigChange
 } from '../../../services/chambers/actions'
 import {
-  setTestSetupError,
+  
   setTestSetupSuccess,
   saveAttenuation,
   sendAttenuation,
   getAttenuation
 } from '../../../services/chambers/actions'
+import {setTestSetupError} from '../../../services/snackbars/actions'
 
 class ChamberConfiguration extends Component {
   constructor(props) {

@@ -5,8 +5,10 @@ import { connect } from 'react-redux'
 import ChamberTabs from './chamber-tabs'
 import { populateTestItems } from '../../services/testqueue/actions'
 import { ErrorMessageDisplay, SuccessMessageDisplay } from '../app/error-message-display'
-import { reserveChamber, unReserveChamber, fetchChambers, fetchDuts, saveDut, setTestSetupError } from '../../services/chambers/actions'
-import SimpleSnackbar from '../app/snackbar-error-message-display' 
+import { reserveChamber, unReserveChamber, fetchChambers, fetchDuts, saveDut } from '../../services/chambers/actions'
+import SnackbarMessage from '../app/snackbar-error-message-display' 
+import { setTestSetupError } from '../../services/snackbars/actions'
+
 
 
 class ChamberDetail extends Component {
@@ -79,6 +81,8 @@ class ChamberDetail extends Component {
   }
 
   render() {
+    // console.log('state:',  this.state);
+    // console.log('props:', this.props);
     if (!this.props.chamber) {
       return (
         <div
@@ -111,6 +115,11 @@ class ChamberDetail extends Component {
                           null;
     }
 
+    console.log('snackbarMsg: ', this.props.snackbarMessage);
+//    if (errorMessage) {
+//      this.props.showErrMessage(chamberName, errorMessage);
+//    }
+
     return (
       <div
         onClick={this.back}
@@ -126,11 +135,11 @@ class ChamberDetail extends Component {
                chamberName + ')'}
             </h3>
           </div>
-          {errorMessage &&
-            <SimpleSnackbar errorMessage={errorMessage}
+          {this.props.snackbarMessage &&
+            <SnackbarMessage errorMessage={this.props.snackbarMessage}
                                  errorClass="test-setup-error" />          
           }
-          {successMessage && 
+         {successMessage && 
             <SuccessMessageDisplay successMessage={successMessage}
                                    successClass="test-setup-success" />
           }
@@ -180,7 +189,8 @@ const mapStateToProps = (state, currentProps) => ({
   chamber: state.chambers.chambers.find(
     c => c.name === currentProps.match.params.name),
   duts: state.chambers.duts,
-  user: state.authentication.user
+  user: state.authentication.user,
+  snackbarMessage: state.snackbars.snackbarMessage
 })
 
 const mapDispatchToProps = dispatch => bindActionCreators({ 
@@ -190,7 +200,8 @@ const mapDispatchToProps = dispatch => bindActionCreators({
   unReserveChamber,
   setTestSetupError,
   fetchChambers,
-  fetchDuts
+  fetchDuts,
+  
 }, dispatch)
 
 export default connect(

@@ -8,6 +8,7 @@ import playlist from './playlist/reducer'
 import errorMessage from './error-handling/reducer'
 import test_runs from './test-runs/reducer'
 import firmwares from './firmwares/reducer'
+import snackbars from './snackbars/reducer'
 
 
 export default combineReducers({
@@ -18,6 +19,7 @@ export default combineReducers({
   errorMessage,  
   test_runs, 
   firmwares,
-  playlist
+  playlist,
+  snackbars
 })
 

@@ -1,5 +1,5 @@
 import { normalizeResponse } from '../error-handling/actions'
-import { setTestSetupError } from '../chambers/actions'
+import { setTestSetupError } from '../snackbars/actions'
 
 export const actions = {
   TEST_SUITE_FETCH: 'playlist/TEST_SUITE_FETCH',

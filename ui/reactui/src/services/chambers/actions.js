@@ -1,4 +1,5 @@
 import { setError, normalizeResponse } from '../error-handling/actions'
+import {setTestSetupError} from '../snackbars/actions'
 
 export const actions = {
   CHAMBER_FETCH: 'chamber/CHAMBER_FETCH',
@@ -11,18 +12,17 @@ export const actions = {
   TEST_SETUP_SUCCESS_RESET: 'chamber/TEST_SETUP_SUCCESS_RESET'
 };
 
-export const setTestSetupError = (chamberName, message, timeout=10000) => {
+/*
+export const setTestSetupError = (chamberName, message, timeout=5000) => {
   return dispatch => {
-    setTimeout(() => {
-      dispatch({
-        type: actions.TEST_SETUP_ERROR_RESET,
-        chamberName: chamberName
-      })
-    }, timeout)
+    // setTimeout(() => {
+    //   dispatch({
+    //     type: actions.TEST_SETUP_ERROR_RESET,
+    //     chamberName: chamberName
+    //   })
+    // }, timeout)
 
-    console.log('here', message);
     if (message.constructor === Object) {
-      console.log('here2', message);
       message = JSON.stringify(message);
     }
 
@@ -33,6 +33,7 @@ export const setTestSetupError = (chamberName, message, timeout=10000) => {
     })
   }
 }
+*/
 
 export const setTestSetupSuccess = (chamberName, message, timeout=5000) => {
   return dispatch => {
