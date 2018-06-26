@@ -7,7 +7,7 @@ import { populateTestItems } from '../../services/testqueue/actions'
 import { ErrorMessageDisplay, SuccessMessageDisplay } from '../app/error-message-display'
 import { reserveChamber, unReserveChamber, fetchChambers, fetchDuts, saveDut } from '../../services/chambers/actions'
 import SnackbarMessage from '../app/snackbar-error-message-display' 
-import { setTestSetupError } from '../../services/snackbars/actions'
+// import { setTestSetupError } from '../../services/snackbars/actions'
 
 
 
@@ -198,7 +198,7 @@ const mapDispatchToProps = dispatch => bindActionCreators({
   saveDut,
   reserveChamber,
   unReserveChamber,
-  setTestSetupError,
+  // setTestSetupError,
   fetchChambers,
   fetchDuts,
   
