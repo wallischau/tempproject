@@ -135,10 +135,10 @@ class ChamberDetail extends Component {
                chamberName + ')'}
             </h3>
           </div>
-          {this.props.snackbarMessage &&
+          {/* {this.props.snackbarMessage &&
             <SnackbarMessage errorMessage={this.props.snackbarMessage}
                                  errorClass="test-setup-error" />          
-          }
+          } */}
          {successMessage && 
             <SuccessMessageDisplay successMessage={successMessage}
                                    successClass="test-setup-success" />
