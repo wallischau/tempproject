@@ -4,10 +4,8 @@ import { connect } from 'react-redux'
 
 import ChamberTabs from './chamber-tabs'
 import { populateTestItems } from '../../services/testqueue/actions'
-import { ErrorMessageDisplay, SuccessMessageDisplay } from '../app/error-message-display'
+import { SuccessMessageDisplay } from '../app/error-message-display'
 import { reserveChamber, unReserveChamber, fetchChambers, fetchDuts, saveDut } from '../../services/chambers/actions'
-import SnackbarMessage from '../app/snackbar-error-message-display' 
-// import { setTestSetupError } from '../../services/snackbars/actions'
 
 
 
@@ -104,22 +102,18 @@ class ChamberDetail extends Component {
     }
 
     let chamberName = this.props.chamber.name;
-    let errorMessage = null;
+    // let errorMessage = null;
     let successMessage = null;
     if (chamberName in this.props.testSetupMessages) {
-      errorMessage = this.props.testSetupMessages[chamberName].error ?
-                        this.props.testSetupMessages[chamberName].error :
-                        null;
+      // errorMessage = this.props.testSetupMessages[chamberName].error ?
+      //                   this.props.testSetupMessages[chamberName].error :
+      //                   null;
       successMessage = this.props.testSetupMessages[chamberName].success ?
                           this.props.testSetupMessages[chamberName].success :
                           null;
     }
 
-    console.log('snackbarMsg: ', this.props.snackbarMessage);
-//    if (errorMessage) {
-//      this.props.showErrMessage(chamberName, errorMessage);
-//    }
-
+  
     return (
       <div
         onClick={this.back}
@@ -190,7 +184,6 @@ const mapStateToProps = (state, currentProps) => ({
     c => c.name === currentProps.match.params.name),
   duts: state.chambers.duts,
   user: state.authentication.user,
-  snackbarMessage: state.snackbars.snackbarMessage
 })
 
 const mapDispatchToProps = dispatch => bindActionCreators({ 

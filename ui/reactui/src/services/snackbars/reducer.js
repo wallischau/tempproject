@@ -2,7 +2,7 @@ import { actions } from './actions'
 
 const initialState = {
 	open: false,
-	snackbarMessage: '',
+	snackbarMessages: [],
 	snackbarMessageClass: '',
 	snackbarChamberName: ''
 }
@@ -10,39 +10,44 @@ const initialState = {
 export default (state = initialState, action) => {
 
 	let newMessages = {...state.testSetupMessages};
-	console.log('newMessage:', newMessages);
+	let newSnackbarMessages = state.snackbarMessages;
+	console.log('newSnackbarMessages:', newSnackbarMessages);
 	console.log('action: ', action)
 	switch (action.type) {
 		case actions.SHOW_ERR_MESSAGE:
+			newSnackbarMessages.push('chamber ' + action.chamberName + " " + action.snackbarMessage);
 			return {
 				...state,
-				snackbarMessage: action.snackbarMessage,
+				snackbarMessages: newSnackbarMessages,
 				open: true,
 				snackbarChamberName: action.chamberName
 			}
 		case actions.SHOW_SUCCESS_MESSAGE:
 			return {
 				...state,
-				snackbarMessage: 'abc',
+				snackbarMessages: 'abc',
 			}
 		case actions.SHOW_INFO_MESSAGE:
 			return {
 				...state,
-				snackbarMessage: 'abc',
+				snackbarMessages: 'abc',
 			}
 		case actions.SHOW_WARNING_MESSAGE:
 			return {
 				...state,
-				snackbarMessage: 'abc',
+				snackbarMessages: 'abc',
 			}
 		case actions.RESET_MESSAGE:
+			// newSnackbarMessage.shift();
+			newSnackbarMessages = [];
 		    newMessages[action.chamberName] = {
-        		error: null
+        		error: null,
+				snackbarChamberName: '' 
       		}
 
 			return {
 				...state,
-				snackbarMessage: null,
+				snackbarMessages: newSnackbarMessages,
 				open: false,
 		        testSetupMessages: newMessages
 
